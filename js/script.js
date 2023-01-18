@@ -34,18 +34,17 @@ a.forEach(function (item) {
   const close = document.querySelector(
     "header>.seach-pop-up>.background>button"
   );
-  const wrap = document.getElementById("wrap");
 
   search.addEventListener("click", function (evt) {
     evt.preventDefault();
     popUp.classList.add("active");
-    wrap.classList.add("stop-scrolling");
+    document.body.style.overflow = 'hidden'
   });
 
   close.addEventListener("click", function (evt) {
     evt.preventDefault();
     popUp.classList.remove("active");
-    wrap.classList.remove("stop-scrolling");
+    document.body.style.overflow = 'unset'
   });
 }
 
